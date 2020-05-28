@@ -30,7 +30,7 @@
         <property name="realms">
             <list value-type="org.apache.shiro.realm.Realm">
                 <ref bean="userRealm"></ref>
-                <ref bean="emailRealm"></ref>
+                <ref bean="adminRealm"></ref>
             </list>
         </property>
     </bean>
@@ -39,9 +39,9 @@
         <property name="cacheManager" ref="cacheManager"></property>
         <property name="credentialsMatcher" ref="credentialsMatcher"></property>
     </bean>
-    <bean id="emailRealm" class="com.blog.shiro.realm.EmailRealm">
-        <property name="credentialsMatcher" ref="credentialsMatcher"></property>
+    <bean id="adminRealm" class="com.blog.shiro.realm.AdminRealm">
         <property name="cacheManager" ref="cacheManager"></property>
+        <property name="credentialsMatcher" ref="credentialsMatcher"></property>
     </bean>
 
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>

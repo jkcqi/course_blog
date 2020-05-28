@@ -20,17 +20,9 @@ public class MyAuthentication extends ModularRealmAuthenticator {
         BlogUsernamePasswordToken token= (BlogUsernamePasswordToken) authenticationToken;
         Collection<Realm> realms = getRealms();
         Collection<Realm> typeCollection=new ArrayList<>();
-        if (PatternUtil.isEmail(token.getUsername())){
-            for (Realm realm:realms) {
-                if (realm.getName().contains("email")){
-                    typeCollection.add(realm);
-                }
-            }
-        }else {
-            for (Realm realm:realms){
-                if (!realm.getName().contains("email")){
-                    typeCollection.add(realm);
-                }
+        for (Realm realm : realms) {
+            if (realm.getName().contains(token.getRole())){
+                typeCollection.add(realm);
             }
         }
         if (typeCollection.size() == 1){

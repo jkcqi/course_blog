@@ -8,6 +8,12 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
 public class UserRealm extends AuthorizingRealm {
+
+    @Override
+    public String getName() {
+        return "user";
+    }
+
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;

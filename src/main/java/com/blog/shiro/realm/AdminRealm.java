@@ -7,10 +7,11 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
-public class EmailRealm extends AuthorizingRealm {
+public class AdminRealm extends AuthorizingRealm {
+
     @Override
     public String getName() {
-        return "email";
+        return "admin";
     }
 
     @Override
