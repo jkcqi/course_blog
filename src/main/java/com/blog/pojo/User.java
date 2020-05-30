@@ -1,18 +1,23 @@
 package com.blog.pojo;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class User {
     private Integer id;
 
+//    @NotNull
     private String username;
 
+//    @NotNull
     private String email;
 
+//    @NotNull
     private String password;
 
     private String nickname;
 
+//    @NotNull
     private Integer roleid;
 
     private Date registertime;
